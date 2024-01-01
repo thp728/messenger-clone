@@ -37,7 +37,7 @@ model Account {
   provider          String
   providerAccountId String
   refresh_token     String? @db.String
-  access_toke       String? @db.String
+  access_token      String? @db.String
   expires_at        Int?
   token_type        String?
   scope             String?
@@ -56,8 +56,8 @@ model Conversation {
   name          String?
   isGroup       Boolean?
 
-  messageIds String[]  @db.ObjectId
-  messages   Message[]
+  messagesIds String[]  @db.ObjectId
+  messages    Message[]
 
   userIds String[] @db.ObjectId
   users   User[]   @relation(fields: [userIds], references: [id])
